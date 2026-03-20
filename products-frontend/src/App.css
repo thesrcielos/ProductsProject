@@ -1,0 +1,56 @@
+.products-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    color: white;
+}
+
+.products-table button {
+    color: red;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+th, td {
+  border: 1px solid white; 
+  padding: 8px; 
+  text-align: left; 
+}
+
+.product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 20px;
+  justify-items: center;
+  align-items: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
+.form-group label {
+  font-weight: bold;
+  text-align: left;
+}
+
+.product-form button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  width: 100%;
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.product-form input {
+  padding: 8px;
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+}

@@ -1,0 +1,29 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_DB: products
+      POSTGRES_USER: diego
+      POSTGRES_PASSWORD: products_101
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build: .
+    container_name: spring_backend
+    depends_on:
+      - postgres
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/products
+      SPRING_DATASOURCE_USERNAME: diego
+      SPRING_DATASOURCE_PASSWORD: products_101
+      FRONTEND_URL: http://localhost:5173
+    ports:
+      - "8080:8080"
+
+volumes:
+  postgres_data:
